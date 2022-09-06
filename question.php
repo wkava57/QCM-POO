@@ -43,6 +43,17 @@ class question
             }
         }
 
-        $this->reponses[$num];
+        // return $this->reponses[$num];
+    }
+
+    public function getNumBonneReponse(): int{
+        // parcourir le tableau des réponses 
+        foreach ($this->reponses as $i => $reponse) {
+            // si la réponse est une bonne réponse alors
+            if($reponse -> getStatus() == true){
+                // je retourne l'index 
+                return $i;
+            }
+        }
     }
 }
