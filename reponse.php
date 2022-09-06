@@ -13,4 +13,10 @@ class Reponse{
         $this->reponse = $reponse;
         $this->status = $status;
     }
+    public function getReponse(): string{
+        return $this->reponse;
+    }
+    public function getStatus(): string{
+        return $this->status;
+    }
 }
