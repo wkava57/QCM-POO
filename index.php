@@ -5,7 +5,7 @@ include('./question.php');
 include ('./reponse.php');
 
 
-
+var_dump($_POST);
 $qcm = new Qcm();
  
 $question1 = new Question('Et paf, ça fait ...');

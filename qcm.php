@@ -20,14 +20,15 @@ class Qcm {
 
         }
         else{
-            echo "<form>";
+            echo "<form method= 'post'>";
             foreach ($this->questions as $i => $question) {
-            echo $question -> getQuestion();
+            echo $question -> getQuestion() . "<br><br>";
             
                 foreach ($question->getReponses() as $j => $reponse) {
-                    echo $reponse->getReponse();
+                    echo "<input type = 'radio' name = '" . $i . "' value = '" . $j . "'><label for = '" . $j . "'>".$reponse->getReponse()."</label>";
                 }
-        }
+        }   
+        echo "<input type = 'submit' value = 'Envoyer'></form>";
     }
     }
 
