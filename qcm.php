@@ -2,7 +2,7 @@
 
 class Qcm {
     private array $questions = [];
-    private array $appreciations;
+    private array $appreciations = [];
 
     public function ajouterQuestion(Object $question){
         array_push($this->questions, $question);
@@ -30,7 +30,7 @@ class Qcm {
     public function generer(){
         // si le _POST existe et s'il est rempli
         if(isset($_POST) && !empty($_POST)){
-            $note = 0;
+            $nbBonneRep = 0;
             foreach ($this->questions as $i => $question) {
                 echo '<br><br>';
                 echo $question -> getQuestion() . "<br><br>"; 
@@ -38,7 +38,7 @@ class Qcm {
                 if($question -> getNumBonneReponse() == $_POST[$i]){
                     echo 'super';
                     // chaque fois qu'il y a une bonne réponse je rajoute un à note
-                    $note++;
+                    $nbBonneRep++;
                     echo $question->getExplications();
 
                     } else {
@@ -48,7 +48,12 @@ class Qcm {
                     
             }
             echo "<br>";
-             echo $note . "/20";  
+            // divise la note par le nombre de question multiplier par 20
+            $note = round($nbBonneRep/count($this->questions)*20);
+             echo $note . "/20";
+                if(isset($this->appreciations[$note])) {
+                    echo $this->appreciations[$note];
+                }
         }
         else{
             echo "<form method= 'post'>";
