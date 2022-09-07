@@ -56,4 +56,14 @@ class question
             }
         }
     }
+
+    public function getBonneReponse(): object{
+        foreach ($this->reponses as $i => $reponse){
+            // si le numéro de la bonne réponse est egale à l'index donc 
+            if($reponse->getNumBonneReponse() == $i){
+                // réponse est la bonne réponse
+                return $reponse;
+            }
+        }
+    }
 }
