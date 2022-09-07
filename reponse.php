@@ -8,7 +8,7 @@ class Reponse{
     public string $status;
 
 
-    public function __construct(string $reponse, string $status = Reponse::MAUVAISE_REPONSE)
+    public function __construct(string $reponse, $status = Reponse::MAUVAISE_REPONSE)
     {
         $this->reponse = $reponse;
         $this->status = $status;

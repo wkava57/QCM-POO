@@ -13,20 +13,20 @@ class question
     {
         $this->question = $question;
     }
-    public function setReponse(string $reponse): void
+    public function ajouterReponse(object $reponse): void
     {
-        $this->reponse = $reponse;
+        array_push($this->reponses, $reponse);
     }
     public function getReponses()
     {
         return $this->reponses;
     }
 
-    public function getExplication(): string
+    public function getExplications(): string
     {
         return $this->explication;
     }
-    public function setExplication(string $explication): void
+    public function setExplications(string $explication): void
     {
         $this->explication = $explication;
     }
